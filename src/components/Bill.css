@@ -1,0 +1,27 @@
+.bill-container {
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: -15px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.bill-input {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border-style: none;
+    margin-top: 10px;
+    text-align: right;
+    background-color: rgb(236, 248, 241);
+}
+input[type='tel']{
+    font-size: 1em;
+    font-weight: 600;
+    padding-right: 10px;
+}
+.bill-container .bill{
+    font-size: 1.2em;
+    font-weight: 600;
+}

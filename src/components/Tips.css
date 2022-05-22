@@ -1,0 +1,49 @@
+.tips-container {
+    padding: 30px;
+}
+.tip-input-container{
+    display: grid;
+    grid-template-columns: repeat(2, calc(100%/2));
+    gap: 10px;
+    grid-auto-rows: minmax(40px, auto);
+    margin-top: 10px;
+}
+button.tip-button {
+    border-radius: 8px;
+    border-style: none;
+    background-color: var(--second-bg-color);
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+}
+button:hover {
+    background-color: var(--main-bg-color);
+    transform: scale(1.05);
+    transition: all 0.4s ease;
+    color: var(--second-bg-color);
+}
+
+button:focus{
+    background-color: var(--main-bg-color);
+    color: var(--second-bg-color);
+}
+.custom-tip[type='tel']{
+    text-align: right;
+    color: var(--second-bg-color);
+    background-color: rgb(236, 248, 241);
+    border-radius: 8px;
+    border-style: none;
+}
+.custom-tip:focus{
+    outline-color: cadetblue;
+}
+
+.tip-label {
+    font-weight: 600;
+    font-size: 1.2em;
+}
+@media (min-width: 800px){
+    .tip-input-container{
+        grid-template-columns: repeat(3, 100px);
+    }
+}

@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Bill from './components/Bill';
+import Header from './components/Header';
+import People from './components/People';
+import Results from './components/Results';
+import Tips from './components/Tips';
 
 function App() {
+  const [bill, setBill] = useState("")
+  const [people, setPeople] = useState("")
+  const [tip, setTip] = useState("")
+  
+  let tipAmount = ((Number(bill) * Number(tip))/100).toFixed(2)
+  let tipPerPerson = ((Number(tipAmount)) / (Number(people))).toFixed(2)
+  let totalPerPerson = ((Number(bill) + Number(tipAmount))/Number(people)).toFixed(2)
+
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Header />
+      <div className='main-container'>
+      <div className='media-input-container'>
+        <Bill bill={bill} setBill={setBill}/>
+        <Tips bill={bill} people={people} tip={tip} setTip={setTip}/>
+        <People people={people} setPeople={setPeople}/>
+
+      </div>
+        <Results tipPerPerson={tipPerPerson} totalPerPerson={totalPerPerson}
+        setBill={setBill} setTip={setTip} setPeople={setPeople}/>  
     </div>
+    </div>  
   );
 }
 

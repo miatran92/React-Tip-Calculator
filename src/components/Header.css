@@ -1,0 +1,13 @@
+.logo-container {
+    background-color: var(--main-bg-color);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(7, 47, 7);
+    }
+@media (min-width: 800px) {
+    .logo-container {
+        padding: 5em;
+    }
+}
